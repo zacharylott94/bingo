@@ -21,8 +21,34 @@ namespace Bingo
       
       }
     }
+    static public bool Wins(int board){
+      foreach (var winState in winStates)
+      {
+        if((board & winState) == winState){
+          return true;
+        }
+      }
+      return false;
+    }
 
-        public static int[] winStates = new int[]{
+    public static void winSpace(){
+      int win = 0;
+      int loss = 0;
+      for(int i = 0; i < 33554431; i++){
+        if (Board.Wins(i)) {
+          win++;
+        }
+        else{
+          loss++;
+        }
+      }
+      Console.WriteLine($"Wins: {win}");
+      Console.WriteLine($"Losses: {loss}");
+      Console.WriteLine($"Chance for a random board to win: {(double)win / (loss + win)}");
+
+    }
+
+    public static int[] winStates = new int[]{
       // ▓▓▓▓▓▓▓▓▓▓
       // ░░░░░░░░░░
       // ░░░░░░░░░░
