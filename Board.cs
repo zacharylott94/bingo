@@ -4,6 +4,7 @@ namespace Bingo
   static class Board {
 
     public delegate bool BoardFillRequirement(int board, int filled);
+    public delegate bool BoardWinRequirement(int board);
     private static String filled = "▓▓";
     private static String empty = "░░";
 
@@ -34,6 +35,31 @@ namespace Bingo
       return false;
     }
 
+    static public bool HasOneWin(int board){
+      int count = 0;
+      foreach (var winState in winStates)
+      {
+        if((board & winState) == winState){
+          count ++;
+          if (count > 1) {return false;}
+        }
+      }
+      if (count == 1) {return true;}
+      return false;
+    }
+
+    static public bool HasTwoWins(int board){
+      int count = 0;
+      foreach (var winState in winStates)
+      {
+        if((board & winState) == winState){
+          count ++;
+          if (count > 2) {return false;}
+        }
+      }
+      if (count == 2) {return true;}
+      return false;
+    }
     static public bool hasExactNumberFilled(int board, int filled){
       int count = 0;
       for (int i = 0; i < 25; i++){
@@ -72,12 +98,12 @@ namespace Bingo
     }
     
 
-    public static void WinSpace(int filled, BoardFillRequirement method){
+    public static void WinSpace(int filled, BoardFillRequirement method, BoardWinRequirement winMethod){
       int win = 0;
       int loss = 0;
       for(int i = 0; i < FULL_BOARD+1; i++){
         if(method(i, filled)){
-          if (Board.Wins(i)) {
+          if (winMethod(i)) {
             win++;
           }
           else{

@@ -1,16 +1,10 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using Bingo;
+Console.WriteLine("Given boards that have exactly 10 spaces filled, and assuming the 10th space is the win...");
+Board.WinSpace(10,Board.hasExactNumberFilled,Board.HasOneWin);
 
-// Random rnd = new Random();
+Console.WriteLine("Given boards that have exactly 16 spaces filled, and assuming the 16th space is the win...");
+Board.WinSpace(16,Board.hasExactNumberFilled,Board.HasOneWin);
 
-// for (int i = 0; i < 1000; i++){
-//   int board = rnd.Next(0,Board.FULL_BOARD);
-//   if (Board.hasExactNumberFilled(board,10)){
-//     Board.Print(board);
-//     Console.WriteLine();
-//   }
-// }
-
-Board.WinSpace(10,Board.hasExactNumberFilled);
-Board.WinSpace(10,Board.hasAtMostNumberFilled);
-Board.WinSpace(10,Board.hasAtLeastNumberFilled);
+Console.WriteLine("Given all boards, and boards need exactly two win conditions...");
+Board.WinSpace(25,Board.hasAtMostNumberFilled,Board.HasTwoWins);
