@@ -2,11 +2,11 @@
 using Bingo;
 
 Random rnd = new Random();
-// for(int i = 0; i< 100; i++){
-//   int next = rnd.Next(0b11111,0b1111100000000000000000000);
-//   if (Board.Wins(next)){
-//     Board.Print(next);
-//     Console.WriteLine();
-//   }
-// }
-Board.winSpace();
+
+for (int i = 0; i < 10; i++){
+  int board = rnd.Next(0,Board.FULL_BOARD);
+  Board.Print(board);
+  Console.WriteLine($"Spaces Filled: {Board.CountFilled(board)}");
+  Console.WriteLine();
+}
+

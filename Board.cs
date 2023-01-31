@@ -5,6 +5,7 @@ namespace Bingo
     private static String filled = "▓▓";
     private static String empty = "░░";
 
+    public static int FULL_BOARD = 33554431;
 
 
     static public void Print(int board){
@@ -46,6 +47,17 @@ namespace Bingo
       Console.WriteLine($"Losses: {loss}");
       Console.WriteLine($"Chance for a random board to win: {(double)win / (loss + win)}");
 
+    }
+
+    public static int CountFilled(int board){
+      int count = 0;
+      for (int i = 0; i < 25; i++){
+        int space = 1 << i;
+        if ((board & space) == space) {
+          count++;
+        }
+      }
+      return count;
     }
 
     public static int[] winStates = new int[]{
