@@ -1,4 +1,8 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using Bingo;
 
-Board.Print(0b0000100010001000100010000);
+foreach (var item in Board.winStates)
+{
+  Board.Print(item);
+  Console.WriteLine();
+}
