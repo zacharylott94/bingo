@@ -2,6 +2,8 @@ namespace Bingo
 {
   using System;
   static class Board {
+
+    public delegate bool BoardFillRequirement(int board, int filled);
     private static String filled = "▓▓";
     private static String empty = "░░";
 
@@ -32,15 +34,55 @@ namespace Bingo
       return false;
     }
 
-    public static void winSpace(){
+    static public bool hasExactNumberFilled(int board, int filled){
+      int count = 0;
+      for (int i = 0; i < 25; i++){
+        int space = 1 << i;
+        if ((board & space) == space) {
+          count++;
+          if (count > filled) {return false;}
+        }
+      }
+      if (count == filled) {return true;}
+      return false;
+    }
+
+    static public bool hasAtMostNumberFilled(int board, int filled){
+      int count = 0;
+      for (int i = 0; i < 25; i++){
+        int space = 1 << i;
+        if ((board & space) == space) {
+          count++;
+          if (count > filled) {return false;}
+        }
+      }
+      return true;
+    }
+
+    static public bool hasAtLeastNumberFilled(int board, int filled){
+      int count = 0;
+      for (int i = 0; i < 25; i++){
+        int space = 1 << i;
+        if ((board & space) == space) {
+          count++;
+        }
+      }
+      if (count < filled){return false;}
+      return true;
+    }
+    
+
+    public static void WinSpace(int filled, BoardFillRequirement method){
       int win = 0;
       int loss = 0;
-      for(int i = 0; i < 33554431; i++){
-        if (Board.Wins(i)) {
-          win++;
-        }
-        else{
-          loss++;
+      for(int i = 0; i < FULL_BOARD+1; i++){
+        if(method(i, filled)){
+          if (Board.Wins(i)) {
+            win++;
+          }
+          else{
+            loss++;
+          }
         }
       }
       Console.WriteLine($"Wins: {win}");
