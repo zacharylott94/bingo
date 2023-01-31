@@ -1,0 +1,15 @@
+/home/zach/Programming/cSharp/bingo/obj/Debug/net6.0/bingo.csproj.AssemblyReference.cache
+/home/zach/Programming/cSharp/bingo/obj/Debug/net6.0/bingo.GeneratedMSBuildEditorConfig.editorconfig
+/home/zach/Programming/cSharp/bingo/obj/Debug/net6.0/bingo.AssemblyInfoInputs.cache
+/home/zach/Programming/cSharp/bingo/obj/Debug/net6.0/bingo.AssemblyInfo.cs
+/home/zach/Programming/cSharp/bingo/obj/Debug/net6.0/bingo.csproj.CoreCompileInputs.cache
+/home/zach/Programming/cSharp/bingo/bin/Debug/net6.0/bingo
+/home/zach/Programming/cSharp/bingo/bin/Debug/net6.0/bingo.deps.json
+/home/zach/Programming/cSharp/bingo/bin/Debug/net6.0/bingo.runtimeconfig.json
+/home/zach/Programming/cSharp/bingo/bin/Debug/net6.0/bingo.dll
+/home/zach/Programming/cSharp/bingo/bin/Debug/net6.0/bingo.pdb
+/home/zach/Programming/cSharp/bingo/obj/Debug/net6.0/bingo.dll
+/home/zach/Programming/cSharp/bingo/obj/Debug/net6.0/refint/bingo.dll
+/home/zach/Programming/cSharp/bingo/obj/Debug/net6.0/bingo.pdb
+/home/zach/Programming/cSharp/bingo/obj/Debug/net6.0/bingo.genruntimeconfig.cache
+/home/zach/Programming/cSharp/bingo/obj/Debug/net6.0/ref/bingo.dll
