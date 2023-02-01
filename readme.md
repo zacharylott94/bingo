@@ -25,6 +25,6 @@ Adding bingo boards with numbers would be really cool! Searching through the ent
 
 Going through the trouble of adding boards with numbers means that I would also have to go through the trouble of actually simulating number drawing (or at least passing a list of random draws to compare boards against).
 
-## What I learned
+## What Did You Learn?
 
 C# is an enjoyable language to use. Good job, C# team. :)
